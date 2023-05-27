@@ -19,7 +19,6 @@ sys.stdout.flush()
 for line in script_lines:
   try:
     args = shlex.split(line)
-    assert args[0] == 'git'
     output = subprocess.check_output(args, timeout=10)
     print(output.decode('utf-8'))
   except:
